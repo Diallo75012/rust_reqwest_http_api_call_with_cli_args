@@ -56,3 +56,16 @@ url_schema:`<url>`			`?` 	`&<location>`		`&<requested data key=value>`
 ```
 - String: `current.time`
 - Float: `current.temperature_2m`
+
+# How To Use:
+- use from CLI 
+```bash
+cargo run <latitude> <longitude>
+```
+- Output
+You will get the temperature
+
+# Code Improvement
+- [] Accept some more parameter
+- [] Accept parameters that are also picking on the type of data desired
+- [] Improve, therefore, structs to be more permissive using `generic` `Types<T>`
