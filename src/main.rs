@@ -140,24 +140,6 @@ async fn main() {
               },
               Err(e) => eprintln!("Failed to read response text: {:?}", e),
             }
-            /*
-            // HERE we check the status code. Could have used the other way around with :`.is_success()`
-            if status.is_client_error() {
-                // Try parsing as error response using match
-                match from_str::<Failed>(&body) {
-                    // is our defined custom struct `Deserialize` it fine -> `Ok()` or `Err()`
-                    Ok(error_response) => eprintln!("Error 400++: {:?}", error_response),
-                    Err(_) => eprintln!("Failed to parse API error response"),
-                }
-            } else {
-                // Try parsing as weather response as no error in `status code`
-                // we now match to check if the response can be `Deserialized` by our custom `struct`
-                match from_str::<WeatherResponse>(&body) {
-                    // Ok()? then we return the weather forecast! Or `Err()` we return error
-                    Ok(weather) => println!("Success 200++: {:?}", weather.current),
-                    Err(e) => eprintln!("Failed to parse weather response: {:?}", e),
-                }
-            }*/
         },
         Err(e) => eprintln!("Error occurred while requesting API: {:?}", e),
     },
